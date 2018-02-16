@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#5f9ea0"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtStatusView"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lytURBack">
+
+            <Button
+                android:id="@+id/btnLftArrowLogin"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="30dp"
+                android:gravity="left"
+                android:clickable="true"
+                android:background="@drawable/arrow_left_black">
+            </Button>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:gravity="center"
+                android:layout_marginTop="25dp"
+                android:textSize="35dp"
+                android:text="YOU'RE BACK!">
+            </TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:id="@+id/lytBlank"
+            android:layout_below="@id/lytURBack">
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:id="@+id/lytEmail"
+            android:layout_below="@id/lytBlank">
+
+            <EditText
+                android:id="@+id/txtEmailId"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:gravity="left"
+                android:background="#ffffff"
+                android:hint="EMAIL"
+                android:inputType="textEmailAddress"
+                >
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lytPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:layout_below="@id/lytEmail">
+
+            <EditText
+                android:id="@+id/txtPassword"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:gravity="left"
+                android:background="#ffffff"
+                android:layout_centerInParent="true"
+                android:hint="PASSWORD"
+                android:inputType="textPassword">
+            </EditText>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lytIForgot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lytEmail"
+            android:padding="2dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtIForgot"
+                android:textSize="15dp"
+                android:clickable="true"
+                android:onClick="callforgetapi"
+                android:textColor="#26d953"
+                android:layout_marginLeft="227dp"
+                android:text="I FORGOT...">
+            </TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lytLogin"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/lytIForgot">
+
+            <Button
+                android:id="@+id/btnLogin2"
+                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_marginTop="100dp"
+                android:layout_centerInParent="true"
+                android:onClick="callLoginApi"
+                android:background="@drawable/mybutton2"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:text="LOG IN"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lytFBLogin"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/lytLogin">
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/login_button"
+                android:layout_width="250dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Learn2MeditateActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#80bfff">
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtBasics"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#ffffff"
+            android:fontFamily="monospace"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="callTheBasicsActivity"
+            android:text="THE BASICS">
+        </TextView>
+
+        <View
+            android:id="@+id/vi_sep"
+            android:layout_marginLeft="50dp"
+            android:layout_width="260dp"
+            android:layout_height="1dp"
+            android:foregroundGravity="center"
+            android:layout_marginTop="115dp"
+            android:background="#ffffff" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/txtHowItWorks"
+        android:clickable="true">
+
+        <TextView
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="130dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#ffffff"
+            android:fontFamily="serif"
+            android:textSize="30dp"
+            android:text="HOW IT WORKS">
+        </TextView>
+
+        <View
+            android:id="@+id/vi_sep2"
+            android:layout_marginLeft="50dp"
+            android:layout_width="260dp"
+            android:layout_height="1dp"
+            android:foregroundGravity="center"
+            android:layout_marginTop="115dp"
+            android:background="#ffffff" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/txtPractice"
+        android:layout_below="@id/txtHowItWorks"
+        android:clickable="true">
+
+
+        <TextView
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="220dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:fontFamily="sans-serif"
+            android:textColor="#ffffff"
+            android:textSize="30dp"
+            android:text="PRACTICE!">
+        </TextView>
+
+        <View
+            android:id="@+id/vi_sep3"
+            android:layout_marginLeft="50dp"
+            android:layout_width="260dp"
+            android:layout_height="1dp"
+            android:foregroundGravity="center"
+            android:layout_marginTop="205dp"
+            android:background="#ffffff" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/txtMeditations"
+        android:layout_below="@id/txtPractice"
+        android:clickable="true">
+
+        <TextView
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="310dp"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#ffffff"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="30dp"
+            android:text="MEDITATITONS">
+        </TextView>
+
+        <View
+            android:id="@+id/vi_sep4"
+            android:layout_marginLeft="50dp"
+            android:layout_width="260dp"
+            android:layout_height="1dp"
+            android:foregroundGravity="center"
+            android:layout_marginTop="295dp"
+            android:background="#ffffff" />
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>
+

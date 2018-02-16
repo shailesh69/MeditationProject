@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConnectUpActivity">
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#5f9ea0"
+        android:id="@+id/lytConnectUp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/lytTxtConnectUp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textAlignment="center"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="CONNECT UP"
+                android:textSize="30dp"
+                android:textColor="#ffffff">
+            </TextView>
+
+            <Button
+                android:id="@+id/btnLftArrowConnectUp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="30dp"
+                android:gravity="left"
+                android:clickable="true"
+                android:background="@drawable/arrow_left_black">
+            </Button>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/lytTxtConnectUpContent"
+            android:layout_below="@id/lytTxtConnectUp">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Signing up is free and easy. \nOnce you're logged in, you'll \ngain access to Bonus \nFeatures and be able to \nsync your progress across \n all the devices. It's so \nworth it."
+                android:textSize="15dp"
+                android:textColor="#ffffff">
+            </TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/lytBlank"
+            android:layout_below="@id/lytTxtConnectUpContent" />
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:id="@+id/lytBtnSignUp"
+            android:layout_below="@id/lytBlank">
+
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_centerInParent="true"
+                android:clickable="true"
+                android:gravity="center"
+                android:background="@drawable/mybutton"
+                android:textColor="#ffffff"
+                android:text="Sign Up"
+                >
+            </Button>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:id="@+id/lytBtnLogin"
+            android:layout_below="@id/lytBtnSignUp">
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/mybutton2"
+                android:textColor="#ffffff"
+                android:text="Login">
+            </Button>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:id="@+id/lytBtnJstBrwse"
+            android:layout_below="@id/lytBtnLogin">
+
+
+            <Button
+                android:id="@+id/btnJstBrwse"
+                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:clickable="true"
+                android:background="@drawable/mybutton3"
+                android:textColor="#26d953"
+                android:text="Just Browsing">
+            </Button>
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
+

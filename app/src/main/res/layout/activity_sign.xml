@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#304c50"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/lytFName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btnLftArrowSignUp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:gravity="left"
+                android:clickable="true"
+                android:background="@drawable/arrow_left_black">
+            </Button>
+
+            <EditText
+                android:id="@+id/firstname"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:gravity="left"
+                android:textColorHint="#d3d3d3"
+                android:background="#ffffff"
+                android:hint="  First name"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lastFname"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/lytFName"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/lastname"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:gravity="left"
+                android:textColorHint="#d3d3d3"
+                android:background="#ffffff"
+                android:hint="  Last name"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lytDOB"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/lastFname"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/country"
+                android:layout_height="30dp"
+                android:layout_width="250dp"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:textColorHint="#d3d3d3"
+                android:hint="  Country"
+                android:background="#ffffff"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lytphone_number"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/lytDOB"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/phonenumber"
+                android:layout_height="30dp"
+                android:layout_width="250dp"
+                android:inputType="phone"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:hint="  Phone number"
+                android:textColorHint="#d3d3d3"
+                android:background="#ffffff"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/lytEmailId"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/lytphone_number"
+            android:layout_marginTop="20dp"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/emailid"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:gravity="left"
+                android:background="#ffffff"
+                android:textColorHint="#d3d3d3"
+                android:hint=" Email (Privacy  Assured)"
+                android:inputType="textEmailAddress"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lytPassword"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/lytEmailId"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="250dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:gravity="left"
+                android:background="#ffffff"
+                android:hint="  Password"
+                android:textColorHint="#d3d3d3"
+                android:inputType="textPassword"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:padding="5dp"
+            android:id="@+id/lytBtnSignOnUp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/lytPassword">
+
+            <Button
+                android:id="@+id/btnSignOnUp"
+                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:onClick="callsignupApi"
+                android:background="@drawable/mybutton"
+                android:textColor="#ffffff"
+                android:text="Sign Up">
+            </Button>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lnkTnC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/lytBtnSignOnUp">
+
+            <TextView
+                android:id="@+id/txtTnC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:textColor="#8eb0f1"
+                android:textSize="12dp"
+                android:text="By tapping on 'Sign Up' you agree to our Terms of Use">
+            </TextView>
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
