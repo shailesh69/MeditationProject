@@ -26,6 +26,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import developers.com.meditation.Models.User;
+
 public class SignUpActivity extends AppCompatActivity {
 
     @Override
@@ -43,8 +45,9 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
     }
-    public void callsignupApi(View v)
-    {
+
+    public void callSignUp(View view) {
+        User user = new User();
         EditText firstname  = (EditText)findViewById(R.id.firstname);
         EditText lastname = (EditText)findViewById(R.id.lastname);
         EditText emailId = (EditText)findViewById(R.id.emailid);
@@ -52,18 +55,25 @@ public class SignUpActivity extends AppCompatActivity {
         EditText Password = (EditText)findViewById(R.id.password);
         EditText Country = (EditText) findViewById(R.id.country);
 
-        String firstName = firstname.getText().toString();
-        String lastName = lastname.getText().toString();
-        String emailid = emailId.getText().toString();
-        String phone_number = phonenumber.getText().toString();
-        String password = Password.getText().toString();
-        String country = Country.getText().toString();
+        user.setFirstname(firstname.getText().toString());
+        user.setLastname(lastname.getText().toString());
+        user.setEmailid(emailId.getText().toString());
+        user.setPhone_number(phonenumber.getText().toString());
+        user.setPassword(Password.getText().toString());
+        user.setCountry(Country.getText().toString());
 
-        if( firstName.equals("") || firstName == null || lastName.equals("") || lastName == null || emailid == null || emailid.equals("") || password == null || password.equals("") || country.equals("") || country == null)
+        if( user.getFirstname().isEmpty()|| user.getFirstname() == null || user.getLastname().isEmpty() || user.getLastname() == null || user.getEmailid() == null || user.getEmailid().isEmpty() || user.getPassword() == null || user.getPassword().isEmpty() || user.getCountry().isEmpty() || user.getCountry() == null)
         {
             Toast.makeText(getApplicationContext(),"Please enter all the details ",Toast.LENGTH_LONG).show();
         }
         else {
+            callSignUpApi(user);
+        }
+    }
+
+    public void callSignUpApi(User user)
+    {
+
             if (isNetworkAvailable() != true) {
 
                 Toast.makeText(getApplicationContext(),""+MessageConstant.INTERNET_CONNECTION_ERROR,Toast.LENGTH_LONG).show();
@@ -137,13 +147,13 @@ public class SignUpActivity extends AppCompatActivity {
                 try {
                     RequestQueue requestQueue = Volley.newRequestQueue(this);
                     JSONObject jsonBody = new JSONObject();
-                    jsonBody.put("firstName", firstName);
-                    jsonBody.put("lastName", lastName);
-                    jsonBody.put("username", emailid);
-                    jsonBody.put("password", password);
-                    jsonBody.put("country", country);
-                    jsonBody.put("contact", phone_number);
-                    jsonBody.put("email", emailid);
+                    jsonBody.put("firstName", user.getFirstname());
+                    jsonBody.put("lastName", user.getLastname());
+                    jsonBody.put("username", user.getEmailid());
+                    jsonBody.put("password", user.getPassword());
+                    jsonBody.put("country", user.getCountry());
+                    jsonBody.put("contact", user.getPhone_number());
+                    jsonBody.put("email", user.getEmailid());
 
                     //    final String mRequestBody = jsonBody.toString();
 
@@ -153,9 +163,7 @@ public class SignUpActivity extends AppCompatActivity {
                     //     pDialog.setMessage("Loading...");
                     //    pDialog.show();
 
-                    JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
-                            url, jsonBody,
-                            new Response.Listener<JSONObject>() {
+                    JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, url, jsonBody, new Response.Listener<JSONObject>() {
 
                                 @Override
                                 public void onResponse(JSONObject response) {
@@ -201,7 +209,6 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
 
-        }
     }
     public boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
