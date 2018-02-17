@@ -79,71 +79,6 @@ public class SignUpActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),""+MessageConstant.INTERNET_CONNECTION_ERROR,Toast.LENGTH_LONG).show();
 
             } else {
-             /*   try {
-                    RequestQueue requestQueue = Volley.newRequestQueue(this);
-                    String URL = "http://192.168.0.101:3000/register";
-                    JSONObject jsonBody = new JSONObject();
-                    jsonBody.put("firstName", firstName);
-                    jsonBody.put("lastName", lastName);
-                    jsonBody.put("username", emailid);
-                    jsonBody.put("password", password);
-                    jsonBody.put("country", country);
-                    jsonBody.put("contact", phone_number);
-                    jsonBody.put("email", emailid);
-
-                    final String mRequestBody = jsonBody.toString();
-
-                    StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
-                        @Override
-                        public void onResponse(String response) {
-
-
-                                //String error = response;
-                                Toast.makeText(getApplicationContext(), "" + MessageConstant.SIGNUP_MESSAGE, Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
-                                startActivity(intent);
-
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Log.e("LOG_VOLLEY", error.toString());
-                        }
-                    }) {
-                        @Override
-                        public String getBodyContentType() {
-                            return "application/json; charset=utf-8";
-                        }
-
-                        @Override
-                        public byte[] getBody() throws AuthFailureError {
-                            try {
-                                return mRequestBody == null ? null : mRequestBody.getBytes("utf-8");
-                            } catch (UnsupportedEncodingException uee) {
-                                VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", mRequestBody, "utf-8");
-                                return null;
-                            }
-                        }
-
-                        @Override
-                        protected Response<String> parseNetworkResponse(NetworkResponse response) {
-                            String responseString = "";
-                            if (response != null) {
-
-                                responseString = String.valueOf(response.statusCode);
-
-                            }
-                            return Response.success(responseString, HttpHeaderParser.parseCacheHeaders(response));
-                        }
-                    };
-
-                    requestQueue.add(stringRequest);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }*/
-                // Tag used to cancel the request
-                // Tag used to cancel the request
-                //  String tag_json_obj = "json_obj_req";
                 try {
                     RequestQueue requestQueue = Volley.newRequestQueue(this);
                     JSONObject jsonBody = new JSONObject();
@@ -159,11 +94,10 @@ public class SignUpActivity extends AppCompatActivity {
 
                     String url = "https://meditationnodeapi.herokuapp.com/register";
 
-                    //     ProgressDialog pDialog = new ProgressDialog(this);
-                    //     pDialog.setMessage("Loading...");
-                    //    pDialog.show();
 
-                    JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, url, jsonBody, new Response.Listener<JSONObject>() {
+                    JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
+                            url, jsonBody,
+                            new Response.Listener<JSONObject>() {
 
                                 @Override
                                 public void onResponse(JSONObject response) {

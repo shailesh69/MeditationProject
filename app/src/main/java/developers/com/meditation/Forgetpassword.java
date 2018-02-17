@@ -32,13 +32,5 @@ public class Forgetpassword extends AppCompatActivity {
                 finish();
             }
         }, 60000);
-
-        //   WebSettings webSettings = myWebView.getSettings();
-        //    webSettings.setJavaScriptEnabled(true);
-
-
-
-        //  webView.loadUrl("https://www.journaldev.com");
-
     }
 }
