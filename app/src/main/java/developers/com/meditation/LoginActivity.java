@@ -195,7 +195,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onCancel() {
                         txtStatus.setText("Login Cancelled");
-                        Toast.makeText(getApplicationContext(), "Login Cancelled", Toast.LENGTH_LONG).show();
+                       // Toast.makeText(getApplicationContext(), "Login Cancelled", Toast.LENGTH_LONG).show();
                     }
 
                     @Override
