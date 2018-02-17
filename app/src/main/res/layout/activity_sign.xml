@@ -148,7 +148,7 @@
                 android:layout_width="250dp"
                 android:layout_centerInParent="true"
                 android:gravity="center"
-                android:onClick="callsignupApi"
+                android:onClick="callSignUp"
                 android:background="@drawable/mybutton"
                 android:textColor="#ffffff"
                 android:text="Sign Up">

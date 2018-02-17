@@ -47,6 +47,8 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
+import developers.com.meditation.Models.User;
+
 public class LoginActivity extends AppCompatActivity {
 
     CallbackManager callbackManager;
@@ -61,18 +63,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_login);
-//initialize Facebook SDK
-
-//        if (BuildConfig.DEBUG) {
-//            FacebookSdk.setIsDebugEnabled(true);
-//            FacebookSdk.addLoggingBehavior(LoggingBehavior.INCLUDE_ACCESS_TOKENS);
-//
             FacebookSdk.sdkInitialize(getApplicationContext());
             AppEventsLogger.activateApp(this);
 
-        //FacebookSdk.sdkInitialize(this);
-//        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
 
         final EditText emailId = (EditText) findViewById(R.id.txtEmailId);
@@ -105,14 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
 
-            public void afterTextChanged(Editable s) {
-
-//                if (!(email.matches(emailPattern) && s.length() > 0))
-//                {
-//                    Toast.makeText(getApplicationContext(),"Invalid email address",Toast.LENGTH_SHORT).show();
-//                }
-
-            }
+            public void afterTextChanged(Editable s) {}
         });
 
         Button loginToConnectUp = findViewById(R.id.btnLftArrowLogin);
@@ -141,13 +127,14 @@ public class LoginActivity extends AppCompatActivity {
     private void initializeControls() {
         txtStatus = findViewById(R.id.txtStatusView);
         LoginButton login_button = (LoginButton) findViewById(R.id.login_button);
-        login_button.setReadPermissions(Arrays.asList("email"));
+        login_button.setReadPermissions(Arrays.asList("email", "user_location", "user_hometown"));
+
         callbackManager = CallbackManager.Factory.create();
 
     }
 
     private void loginWithFB() {
-
+        final User user = new User();
 
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
@@ -159,14 +146,21 @@ public class LoginActivity extends AppCompatActivity {
                                 loginResult.getAccessToken(),
                                 new GraphRequest.GraphJSONObjectCallback() {
                                     @Override
-                                    public void onCompleted(
-                                            JSONObject object,
-                                            GraphResponse response) {
-                                        //              txtStatus.setText("after login" + object.toString());
+                                    public void onCompleted(JSONObject object,GraphResponse response) {
+                                        try {
+                                            // user.setFirstname(object.getString("first_name"));
+                                            // user.setLastname(object.getString("last_name"));
+                                            user.setEmailid(object.getString("email"));
+
+                                            String URL = "https://meditationnodeapi.herokuapp.com/search";
+                                        }
+                                        catch (Exception ex) {
+                                            ex.printStackTrace();
+                                        }
                                     }
                                 });
                         Bundle parameters = new Bundle();
-                        parameters.putString("fields", "email,first_name,last_name,id,name,gender,updated_time,verified,address");
+                        parameters.putString("fields", "email,first_name,last_name,id,name,gender,updated_time,verified,user_location,user_hometown");
                         request.setParameters(parameters);
 
                         //request.setGraphPath(loginResult.getAccessToken().getUserId());

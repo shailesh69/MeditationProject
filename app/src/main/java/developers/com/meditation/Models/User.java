@@ -6,50 +6,60 @@ package developers.com.meditation.Models;
 
 public class User {
 
-    private String name ;
-    private String email ;
+    public User() {}
+
+    private String firstname ;
+    private String lastname;
+    private String emailid ;
     private String password ;
-    private String DOB ;
-    private String gender ;
+    private String phone_number ;
+    private String country ;
 
-    public void setName(String name){
-        this.name = name ;
+    public String getFirstname() {
+        return firstname;
     }
-    public String getName(){
-        return name;
-    }
-    public void setEmail(String email){
-        this.email = email ;
-    }
-    public String getEmail(){
-        return email ;
-    }
-    public void setPassword(String password){
-        this.password = password ;
-    }
-    public String getPassword(){
-        return password ;
-    }
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-    public String getGender() {
-        return gender;
-    }
-    public void setDOB(String DOB) {
-        this.DOB = DOB ;
-    }
-    public String getDOB() {
-        return DOB ;
-    }
-    public User(User user){
-        this.name = user.getName() ;
-        this.email = user.getEmail();
-        this.password = user.getPassword();
-        this.DOB = user.getDOB() ;
-        this.gender = user.getGender() ;
-    }
-    public User(){
 
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getEmailid() {
+        return emailid;
+    }
+
+    public void setEmailid(String emailid) {
+        this.emailid = emailid;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }
